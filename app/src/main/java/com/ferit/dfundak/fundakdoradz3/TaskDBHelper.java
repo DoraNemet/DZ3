@@ -53,6 +53,14 @@ public class TaskDBHelper extends SQLiteOpenHelper {
         writableDatabase.close();
     }
 
+    public void removeTask(Task task){
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.execSQL("DELETE FROM "+Schema.TABLE_TASKS+ " WHERE " + Schema.TITLE + "='"+task.getTitle()+"' AND "+ Schema.DESCRIPTION +" ='" +task.getDescription()+"' AND "+ Schema.URGENCY +" = '"+task.getUrgency()+"'");
+        db.close();
+
+    }
+
+
     public ArrayList<Task> getAllTasks(){
         SQLiteDatabase writableDatabase = this.getWritableDatabase();
         Cursor tasksCursor = writableDatabase.rawQuery(SELECT_ALL_TASKS,null);
@@ -73,7 +81,7 @@ public class TaskDBHelper extends SQLiteOpenHelper {
     public static class Schema{
         private static final int SCHEMA_VERSION = 1;
         private static final String DATABASE_NAME = "tasks.db";
-        static final String TABLE_TASKS = "my_books";
+        static final String TABLE_TASKS = "my_tasks";
         static final String DESCRIPTION = "description";
         static final String TITLE = "title";
         static final String URGENCY = "urgency";

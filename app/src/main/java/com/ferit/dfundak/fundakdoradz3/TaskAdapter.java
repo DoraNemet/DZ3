@@ -26,7 +26,7 @@ public class TaskAdapter extends BaseAdapter {
     }
 
     @Override
-    public Object getItem(int position) {
+    public Task getItem(int position) {
         return this.mTasks.get(position);
     }
 
@@ -64,6 +64,11 @@ public class TaskAdapter extends BaseAdapter {
 
     public void insert(Task task) {
         this.mTasks.add(task);
+        this.notifyDataSetChanged();
+    }
+
+    public void remove(int position) {
+        this.mTasks.remove(position);
         this.notifyDataSetChanged();
     }
 

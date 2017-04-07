@@ -20,7 +20,8 @@
         android:layout_height="wrap_content"
         android:background="@color/colorPrimaryDark"
         android:padding="20dp"
-        android:text="add new task"
+        android:textStyle="bold"
+        android:text="Add new task"
         android:textColor="@color/colorAccent"
         android:gravity="center_horizontal"
 

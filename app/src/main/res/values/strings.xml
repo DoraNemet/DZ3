@@ -3,4 +3,5 @@
     <string name="highest">highest</string>
     <string name="middle">middle</string>
     <string name="lowest">lowest</string>
+    <string name="title">Title:</string>
 </resources>
