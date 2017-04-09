@@ -4,4 +4,5 @@
     <string name="middle">middle</string>
     <string name="lowest">lowest</string>
     <string name="title">Title:</string>
+    <string name="add_new_task">Add new task</string>
 </resources>

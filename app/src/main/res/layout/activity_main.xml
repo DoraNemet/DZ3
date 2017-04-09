@@ -11,20 +11,16 @@
         android:id="@+id/list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="0.21"
-        android:layout_above="@+id/new_task_button"></ListView>
+        android:layout_above="@+id/new_task_button"
+        android:layout_weight="0.21"></ListView>
 
     <TextView
         android:id="@+id/new_task_button"
+        style="@style/AddNewButton"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colorPrimaryDark"
-        android:padding="20dp"
-        android:textStyle="bold"
-        android:text="Add new task"
-        android:textColor="@color/colorAccent"
+        android:layout_alignParentBottom="true"
         android:gravity="center_horizontal"
-
-        android:layout_alignParentBottom="true" />
+        android:padding="20dp"
+        android:text="@string/add_new_task" />
 
 </RelativeLayout>

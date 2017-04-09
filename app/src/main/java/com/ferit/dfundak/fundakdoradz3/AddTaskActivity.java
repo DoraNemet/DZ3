@@ -2,11 +2,11 @@ package com.ferit.dfundak.fundakdoradz3;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class AddTaskActivity extends AppCompatActivity {
 
@@ -49,12 +49,17 @@ public class AddTaskActivity extends AppCompatActivity {
                         urgency = getString(R.string.lowest);
                         break;
                 }
-                Task newTask = new Task(title, description, urgency);
 
-                Log.i("dora", "title: " + title + " description: " + description + " urgency: " +urgency);
+                if(title.isEmpty())
+                    Toast.makeText(AddTaskActivity.this, "Task has to have a title.", Toast.LENGTH_SHORT).show();
 
-                TaskDBHelper.getInstance(getApplicationContext()).insertTask(newTask);
-                finish();
+               else {
+                    Task newTask = new Task(title, description, urgency);
+
+
+                    TaskDBHelper.getInstance(getApplicationContext()).insertTask(newTask);
+                    finish();
+                }
             }
         });
     }
